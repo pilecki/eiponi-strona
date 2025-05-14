@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Strona główna{% endblock %}
+
+{% block content %}
+  {% include 'sekcje/landing.html' %}
+  {% include 'sekcje/hero.html' %}
+  {% include 'sekcje/dla_kogo.html' %}
+  {% include 'sekcje/zespol.html' %}
+  {% include 'sekcje/opinie.html' %}
+  {% include 'sekcje/cennik.html' %}
+  {% include 'sekcje/faq.html' %}
+  {% include 'sekcje/newsletter.html' %}
+  {% include 'sekcje/stopka.html' %}
+{% endblock %}

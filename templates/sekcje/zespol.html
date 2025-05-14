@@ -1,0 +1,25 @@
+{% load static %}
+
+<section class="section-4 py-5 min-vh-100 bg-white d-flex align-items-center">
+  <div class="container">
+    <h2 class="text-center mb-5">Nasz zespół</h2>
+    <div class="row g-4">
+
+      {% for teacher in teachers %}
+      <div class="col-sm-6 col-lg-4 col-xl-3 mx-auto" data-aos="fade-up" data-aos-delay="{{ forloop.counter0|add:'1' }}00">
+        <div class="card text-center shadow-sm h-100 p-3 border-0">
+          <img src="{% static teacher.image %}" class="rounded-circle mx-auto mb-3 team-photo" alt="{{ teacher.name }}">
+          <div class="card-body">
+            <h5 class="card-title">{{ teacher.name }}</h5>
+            <p class="text-muted mb-1">{{ teacher.title }}</p>           
+            <!-- chat gpt najnowsza wersja-->
+            <p class="card-text small">
+              {{ teacher.bio }}              
+            </p>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Plany nauczania grupowe{% endblock %}
+
+{% block content %}
+<section class="section-plany py-5 bg-white">
+  <div class="container">
+    <h2 class="text-center mb-5">Zajęcia grupowe – aktualne plany</h2>
+    <div class="row g-4">
+
+      {% for grupa in grupy_grupowe %}
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 border-0 shadow-sm">
+          <div class="position-relative">
+            <img src="{% static grupa.image %}" class="card-img-top" alt="{{ grupa.name }}">
+            <div class="badge-cena bg-white text-dark shadow-sm fw-bold">
+              {{ grupa.price }}
+            </div>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title mb-1">{{ grupa.name }}, {{ grupa.hours }}, {{ grupa.meetings }}</h5>
+            <p class="card-subtitle text-muted">{{ grupa.books }}, {{ grupa.level }}</p>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+
+    </div>
+  </div>
+</section>
+{% endblock %}
