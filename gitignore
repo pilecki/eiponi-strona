@@ -1,0 +1,21 @@
+# Django
+*.pyc
+__pycache__/
+db.sqlite3
+*.sqlite3
+
+# Env / klucze
+.env
+*.env
+
+# VS Code
+.vscode/
+
+# Static & Media (jeśli generowane dynamicznie)
+media/
+staticfiles/
+static_root/
+
+# OS / systemowe
+.DS_Store
+Thumbs.db
