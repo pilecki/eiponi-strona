@@ -1,0 +1,27 @@
+{% load static %}
+
+<section class="section-opinie py-5 bg-light">
+  <div class="container">
+    <h2 class="text-center mb-5">Co mówią o nas inni</h2>
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+
+        {% for opinion in opinions %}
+        <div class="swiper-slide">
+          <div class="opinion-card shadow-sm p-4 bg-white rounded text-center h-100">
+            <img src="{% static opinion.avatar %}" class="rounded-circle mb-3" alt="{{ opinion.name }}" width="60" height="60">
+            <p class="fst-italic">"{{ opinion.text }}"</p>
+            <p class="fw-bold mb-0">★★★★★ {{ opinion.name }}</p>
+          </div>
+        </div>
+        {% endfor %}
+
+      </div>
+
+      <!-- Nawigacja -->
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-pagination mt-3"></div>
+    </div>
+  </div>
+</section>

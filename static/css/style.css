@@ -1,0 +1,178 @@
+/* ============================================
+   1. Ogólne nadpisania / reset / układ strony
+=============================================== */
+body {
+  padding-top: 80px;
+}
+
+/* ============================================
+   2. Navbar i nawigacja
+=============================================== */
+.navbar {
+  background-color: rgba(255, 255, 255, 0.95);
+}
+.navbar-nav .nav-link {
+  color: #000;
+}
+.navbar-nav .nav-link:hover {
+  color: #e6007e;
+}
+
+/* ============================================
+   3. Sekcja hero
+=============================================== */
+.hero {
+  background: url("../img/tlo.png") no-repeat center center;
+  background-size: cover;
+  height: 100vh;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-shadow: 2px 2px 8px #000;
+}
+
+/* ============================================
+   4. Sekcja o szkole (.section-2)
+=============================================== */
+.section-2 {
+  background-color: #f8f9fa;
+  padding: 60px 0;
+}
+.section-2 h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+.section-2 p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* ============================================
+   5. Sekcja: Dla kogo są zajęcia (.section-3)
+=============================================== */
+.section-3 h2 {
+  font-size: 2.2rem;
+  font-weight: bold;
+}
+.section-3 .card img,
+.section-3 .card-img-top {
+  height: 220px;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* ============================================
+   6. Sekcja: Zespół (.section-4)
+=============================================== */
+.section-4 .card-title {
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+.section-4 .text-muted {
+  font-size: 0.9rem;
+  color: #6c757d;
+}
+.section-4 .card-text {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #333;
+}
+.section-4 .card {
+  border-radius: 1rem;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
+.section-4 .row {
+  row-gap: 2rem;
+}
+
+/* ============================================
+   7. Komponent: Zdjęcia zespołu
+=============================================== */
+.team-photo {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  object-position: center;
+  border: 3px solid #e6007e;
+  padding: 3px;
+}
+
+/* ============================================
+   8. Sekcja: Opinie (Swiper)
+=============================================== */
+.swiper {
+  padding-bottom: 40px;
+}
+.swiper-slide {
+  height: auto;
+}
+.opinion-card {
+  height: 100%;
+}
+
+/* ============================================
+   9. Sekcja: Cennik główny
+=============================================== */
+.section-cennik .card {
+  border-radius: 1rem;
+  transition: transform 0.3s ease;
+}
+.section-cennik .card:hover {
+  transform: translateY(-5px);
+}
+
+/* ============================================
+   10. Sekcja: Plany nauczania
+=============================================== */
+.section-plany .card {
+  border-radius: 0.75rem;
+  overflow: hidden;
+}
+.section-plany .card-img-top {
+  height: 200px;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* ============================================
+   11. Komponent: Cena na karcie
+=============================================== */
+.badge-cena {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  padding: 6px 12px;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  background: #fff;
+  font-weight: bold;
+}
+
+/* ============================================
+   12. Sekcja: FAQ
+=============================================== */
+.section-faq .accordion-button {
+  font-weight: bold;
+}
+.section-faq .accordion-button:not(.collapsed) {
+  color: #0d6efd;
+  background-color: #e7f1ff;
+}
+
+/* ============================================
+   13. Sekcja: Newsletter
+=============================================== */
+.section-newsletter .form-control {
+  border-radius: 0.5rem 0 0 0.5rem;
+}
+.section-newsletter .btn {
+  border-radius: 0 0.5rem 0.5rem 0;
+}
+
+/* ============================================
+   14. Sekcja: Stopka
+=============================================== */
+.footer {
+  font-size: 0.9rem;
+}

@@ -1,0 +1,238 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}EIPONI - Strona główna{% endblock %}
+
+{% block content %}
+<div class="hero">
+    <h1 class="display-4 text-center">Nauka języka japońskiego<br>Dołącz do naszej społeczności</h1>
+</div>
+
+
+<section class="section-2 d-flex bg-white align-items-center min-vh-100">
+  <div class="container">
+    <div class="row align-items-center">
+      <!-- Tekst -->
+      <div class="col-md-6 mb-4 mb-md-0">
+        <h2>Nasza szkoła</h2>
+        <p>
+          EIPONI to miejsce, w którym nauka języka japońskiego staje się przyjemnością.
+          Dzięki naszym nauczycielom i nowoczesnym metodom, uczniowie osiągają realne postępy.
+        </p>
+      </div>
+
+      <!-- Zdjęcie -->
+      <div class="col-md-6 text-center">
+        <img src="{% static 'img/sakura_sekcja1.png' %}" alt="Książka pod drzewem sakury" class="img-fluid rounded shadow">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-3 py-5 min-vh-100 bg-light d-flex align-items-center bg-light">
+  <div class="container">
+    <h2 class="text-center mb-5">Dla kogo są nasze zajęcia?</h2>
+    <div class="row g-4">
+
+      <!-- Karta 1 -->
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+        <div class="card h-100 text-center shadow-sm">
+          <img src="{% static 'img/japonski_dla_kazdego.jpg' %}" class="card-img-top" alt="Japoński dla każdego">
+          <div class="card-body">
+            <h5 class="card-title">Japoński dla każdego</h5>
+            <p class="card-text">Nie musisz znać ani jednego znaku — zaczynamy od podstaw!</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Karta 2 -->
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+        <div class="card h-100 text-center shadow-sm">
+          <img src="{% static 'img/grupy_wiekowe.jpg' %}" class="card-img-top" alt="Dla każdej grupy wiekowej">
+          <div class="card-body">
+            <h5 class="card-title">Dla każdej grupy wiekowej</h5>
+            <p class="card-text">Dzieci, młodzież, dorośli — mamy odpowiednią grupę dla każdego.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Karta 3 -->
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+        <div class="card h-100 text-center shadow-sm">
+          <img src="{% static 'img/indywidualne_grupowe.jpg' %}" class="card-img-top" alt="Zajęcia indywidualne i grupowe">
+          <div class="card-body">
+            <h5 class="card-title">Indywidualne i grupowe</h5>
+            <p class="card-text">Dostosuj tryb nauki do siebie — zajęcia 1:1 lub w grupie.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Karta 1 
+
+<section class="section-4 py-5 min-vh-100 bg-white d-flex align-items-center">
+  <div class="container">
+    <h2 class="text-center mb-5">Nasz zespół</h2>
+    <div class="row g-4">
+
+      {% for teacher in teachers %}
+      <div class="col-sm-6 col-lg-4 col-xl-3 mx-auto" data-aos="fade-up" data-aos-delay="{{ forloop.counter0|add:'1' }}00">
+        <div class="card text-center shadow-sm h-100 p-3 border-0">
+          <img src="{% static teacher.image %}" class="rounded-circle mx-auto mb-3 team-photo" alt="{{ teacher.name }}">
+          <div class="card-body">
+            <h5 class="card-title">{{ teacher.name }}</h5>
+            <p class="text-muted mb-1">{{ teacher.title }}</p>
+            <p class="card-text small">{{ teacher.bio }}</p>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+
+    </div>
+  </div>
+</section>
+
+-->
+
+
+<section class="section-4 py-5 min-vh-100 bg-white d-flex align-items-center">
+  <div class="container">
+    <h2 class="text-center mb-5">Nasz zespół</h2>
+    <div class="row g-4">
+
+      {% for teacher in teachers %}
+      <div class="col-sm-6 col-lg-4 col-xl-3 mx-auto" data-aos="fade-up" data-aos-delay="{{ forloop.counter0|add:'1' }}00">
+        <div class="card text-center shadow-sm h-100 p-3 border-0">
+          <img src="{% static teacher.image %}" class="rounded-circle mx-auto mb-3 team-photo" alt="{{ teacher.name }}">
+          <div class="card-body">
+            <h5 class="card-title">{{ teacher.name }}</h5>
+            <p class="text-muted mb-1">{{ teacher.title }}</p>           
+            <!-- chat gpt najnowsza wersja-->
+            <p class="card-text small">
+              {{ teacher.bio }}              
+            </p>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section-opinie py-5 bg-light">
+  <div class="container">
+    <h2 class="text-center mb-5">Co mówią o nas inni</h2>
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+
+        {% for opinion in opinions %}
+        <div class="swiper-slide">
+          <div class="opinion-card shadow-sm p-4 bg-white rounded text-center h-100">
+            <img src="{% static opinion.avatar %}" class="rounded-circle mb-3" alt="{{ opinion.name }}" width="60" height="60">
+            <p class="fst-italic">"{{ opinion.text }}"</p>
+            <p class="fw-bold mb-0">★★★★★ {{ opinion.name }}</p>
+          </div>
+        </div>
+        {% endfor %}
+
+      </div>
+
+      <!-- Nawigacja -->
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-pagination mt-3"></div>
+    </div>
+  </div>
+</section>
+
+<section class="section-cennik py-5 bg-white">
+  <div class="container">
+    <h2 class="text-center mb-5">Plany nauczania i ceny</h2>
+    <div class="row g-4">
+
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm p-4 text-center">
+          <h3 class="mb-3">Zajęcia grupowe</h3>
+          <p>20 spotkań po 1,5h, nauka w kameralnej grupie, dostępne poziomy od N5 do N1.</p>
+          <p class="fw-bold text-primary">Cena: od 1000 zł</p>
+          <a href="/plany/grupowe/" class="btn btn-outline-primary mt-auto">Czytaj więcej</a>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm p-4 text-center">
+          <h3 class="mb-3">Zajęcia we dwoje</h3>
+          <p>Ucz się z drugą osobą — indywidualne podejście, wspólna motywacja, korzystna cena.</p>
+          <p class="fw-bold text-primary">Cena: od 600 zł</p>
+          <a href="/plany/dwoje/" class="btn btn-outline-primary mt-auto">Czytaj więcej</a>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm p-4 text-center">
+          <h3 class="mb-3">Zajęcia indywidualne</h3>
+          <p>Pełna personalizacja nauki, elastyczne godziny, efektywny progres językowy.</p>
+          <p class="fw-bold text-primary">Cena: od 350 zł</p>
+          <a href="/plany/indywidualne/" class="btn btn-outline-primary mt-auto">Czytaj więcej</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section-faq py-5 bg-light">
+  <div class="container">
+    <h2 class="text-center mb-5">Najczęściej zadawane pytania</h2>
+    <div class="accordion" id="faqAccordion">
+      {% for faq in faqs %}
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="heading{{ forloop.counter }}">
+          <button class="accordion-button {% if not forloop.first %}collapsed{% endif %}" type="button"
+                  data-bs-toggle="collapse" data-bs-target="#collapse{{ forloop.counter }}"
+                  aria-expanded="{% if forloop.first %}true{% else %}false{% endif %}"
+                  aria-controls="collapse{{ forloop.counter }}">
+            {{ faq.question }}
+          </button>
+        </h2>
+        <div id="collapse{{ forloop.counter }}" class="accordion-collapse collapse {% if forloop.first %}show{% endif %}"
+             aria-labelledby="heading{{ forloop.counter }}" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">{{ faq.answer }}</div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- Newsletter -->
+<section class="section-newsletter py-5 bg-white">
+  <div class="container">
+    <h2 class="text-center mb-4">Zapisz się na newsletter</h2>
+    <p class="text-center mb-4">Dołącz do naszej społeczności – bez spamu, tylko język japoński.</p>
+    <form class="newsletter-form mx-auto" style="max-width: 500px;">
+      <div class="input-group">
+        <input type="email" class="form-control" placeholder="Twój adres e-mail" required>
+        <button class="btn btn-primary" type="submit">Zapisz się</button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- Stopka -->
+<footer class="footer bg-dark text-white py-4">
+  <div class="container text-center">
+    <p class="mb-1">&copy; 2025 EIPONI – Nauka języka japońskiego online</p>
+    <small>Kontakt: kontakt@eiponi.com</small>
+  </div>
+</footer>
+
+
+
+
+
+
+{% endblock %}
