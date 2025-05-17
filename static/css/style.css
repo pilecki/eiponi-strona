@@ -18,6 +18,19 @@ body {
   color: #e6007e;
 }
 
+/* Poprawka: Scrollowanie do sekcji bez zakrywania przez navbar */
+#cennik,
+#zespol,
+#opinie,
+#faq,
+#newsletter,
+#dla_kogo,
+#hero,
+#landing {
+  scroll-margin-top: 50px; /* Jeśli navbar jest wyższy/niższy, dostosuj wartość */
+}
+
+
 /* ============================================
    3. Sekcja hero
 =============================================== */
