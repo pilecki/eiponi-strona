@@ -1,5 +1,6 @@
 from django.shortcuts import render
-
+from django.core.mail import send_mail
+from django.conf import settings
 
 
 def home(request):
@@ -122,6 +123,24 @@ def plany_indywidualne(request):
     ]
     return render(request, "plany_indywidualne.html", {"grupy_indywidualne": grupy_indywidualne})
 
+def kontakt_view(request):
+    success = False
+    if request.method == "POST":
+        name = request.POST.get('name')
+        email = request.POST.get('email')
+        message = request.POST.get('message')
+        # Możesz dodać walidację...
+
+        # Wysyłka maila (tylko jeśli masz skonfigurowane SMTP w settings.py)
+        send_mail(
+            subject=f"Zapytanie od {name}",
+            message=f"Od: {name} <{email}>\n\n{message}",
+            from_email=settings.DEFAULT_FROM_EMAIL,
+            recipient_list=[settings.DEFAULT_FROM_EMAIL],
+        )
+        success = True
+
+    return render(request, "kontakt.html", {"success": success})
 
 
 
